@@ -7,6 +7,7 @@ node('large') {
         stage('Lint'){
             sh """
             source /home/jenkins/venv/molecule/bin/activate
+            cd starterkit-role
             molecule lint
             """
         }
