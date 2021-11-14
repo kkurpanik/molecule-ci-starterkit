@@ -6,7 +6,7 @@ node('large') {
         }
         stage('Lint'){
             sh """
-            source /home/jenkins/venv/molecule/bin/activate'
+            source /home/jenkins/venv/molecule/bin/activate
             molecule lint
             """
         }
