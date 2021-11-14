@@ -4,11 +4,11 @@ node('large') {
         stage('Checkout'){
             checkout scm
         }
-        stage('Lint'){
+        stage('CI-Test'){
             sh """
             source /home/jenkins/venv/molecule/bin/activate
             cd starterkit-role
-            molecule lint
+            molecule test
             """
         }
     }
