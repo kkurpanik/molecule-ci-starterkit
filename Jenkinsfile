@@ -5,7 +5,7 @@ node('large') {
             checkout scm
         }
         stage('Lint'){
-            sh 'source venv/molecule/bin/activate'
+            sh 'source /home/jenkins/venv/molecule/bin/activate'
             sh 'molecule lint'
         }
     }
