@@ -1,4 +1,4 @@
-node('large-node') {
+node('large') {
     currentBuild.result = "SUCCESS"
     try {
         stage('Checkout'){
