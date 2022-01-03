@@ -16,6 +16,6 @@ node('large') {
         currentBuild.result = "FAILURE"
         throw err
     } finally {
-        slackSend(color: "good", message: "Test message from Jenkins!")
+        slackSend(color: "good", message: "Test message from Jenkins!", iconEmoji: "https://www.jenkins.io/images/logos/fire/fire.png")
     }
 }
