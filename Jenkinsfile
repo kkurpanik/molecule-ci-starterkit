@@ -2,8 +2,7 @@
 
 node('large') {
     try {
-        currentBuild.result = "STARTED"
-        notifySlack(currentBuild.result)
+        notifySlack('STARTED')
         
         stage('Checkout'){
             checkout scm
