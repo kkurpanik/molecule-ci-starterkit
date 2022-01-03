@@ -16,8 +16,9 @@ node('large') {
     }
     catch (err) {
         currentBuild.result = "FAILURE"
+        notifySlack "FAILURE"
         throw err
     } finally {
-        slackSend(color: "good", message: "Test message from Jenkins!")
+        notifySlack "SUCCESS"
     }
 }
