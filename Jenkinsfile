@@ -17,7 +17,7 @@ node('large') {
         }
     }
     catch (err) {
-        currentBuild.result = "FAILED"
+        currentBuild.result = "FAILURE"
         throw err
     } finally {
         notifySlack(currentBuild.result)
