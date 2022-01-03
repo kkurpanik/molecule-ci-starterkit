@@ -10,6 +10,7 @@ node('large') {
             cd starterkit-role
             molecule test
             """
+            slackSend(color: "good", message: "Test message from Jenkins!")
         }
     }
     catch (err) {
