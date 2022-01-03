@@ -1,4 +1,4 @@
-@Library('jenkins-shared-library@feature/shared_library') _
+@Library('jenkins-shared-library') _
 
 node('large') {
     try {
