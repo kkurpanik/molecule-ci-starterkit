@@ -1,3 +1,5 @@
+@Library('jenkins-shared-library@feature/shared_library') _
+
 node('large') {
     currentBuild.result = "SUCCESS"
     try {
@@ -16,6 +18,6 @@ node('large') {
         currentBuild.result = "FAILURE"
         throw err
     } finally {
-        slackSend(color: "good", message: "Test message from Jenkins!", iconEmoji: "https://www.jenkins.io/images/logos/fire/fire.png")
+        slackSend(color: "good", message: "Test message from Jenkins!")
     }
 }
