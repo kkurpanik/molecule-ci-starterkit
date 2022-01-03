@@ -16,14 +16,23 @@ platforms:
     box: centos/7
     memory: 1024
     cpus: 1
+    provider_options:
+      driver: ${VIRT_DRIVER:-kvm}
+      qemu_use_session: false
   - name: centos8-test
     box: centos/8
     memory: 1024
     cpus: 1
+    provider_options:
+      driver: ${VIRT_DRIVER:-kvm}
+      qemu_use_session: false
   - name: debian11-test
     box: debian/bullseye64
     memory: 1024
     cpus: 1
+    provider_options:
+      driver: ${VIRT_DRIVER:-kvm}
+      qemu_use_session: false
 provisioner:
   name: ansible
 verifier:
