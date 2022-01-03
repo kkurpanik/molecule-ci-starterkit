@@ -1,11 +1,13 @@
 @Library('jenkins-shared-library@feature/shared_library') _
 
 node('large') {
-    currentBuild.result = "SUCCESS"
     try {
+        notifySlack "STARTED"
+        
         stage('Checkout'){
             checkout scm
         }
+        
         stage('CI-Test'){
             sh """
             source /home/jenkins/venv/molecule/bin/activate
@@ -15,10 +17,9 @@ node('large') {
         }
     }
     catch (err) {
-        currentBuild.result = "FAILURE"
-        notifySlack "FAILURE"
+        currentBuild.result = "FAILED"
         throw err
     } finally {
-        notifySlack "SUCCESS"
+        notifySlack(currentBuild.result)
     }
 }
